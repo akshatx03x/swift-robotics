@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #8b5cf6; /* Violet-500 */
+  --color-brand-secondary: #ec4899; /* Pink-500 */
+  --color-brand-accent: #10b981; /* Emerald-500 */
+  --color-brand-warning: #f59e0b; /* Amber-500 */
+  --color-brand-danger: #ef4444; /* Red-500 */
+}
+
+/* Custom global styles for the MVP */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #09090b; /* zinc-950 */
+  color: #fafafa; /* zinc-50 */
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(15, 15, 20, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(20, 20, 25, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(25, 25, 30, 0.75);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fafafa;
+}
+
+.glass-input:focus {
+  border-color: #8b5cf6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Pulse glow animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+  }
+}
+
+.glow-active {
+  animation: glow-pulse 3s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
